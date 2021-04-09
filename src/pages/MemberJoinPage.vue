@@ -1,46 +1,72 @@
 <template>
-  <TitleBar>로그인</TitleBar>
-
-  <section class="section section-member-login-form px-2">
-    <div class="container mx-auto">
-      <div class="px-6 py-6 bg-white rounded-lg shadow-md">
+<div class="lg:flex">
+  <div class="lg:w-1/2 xl:max-w-screen-sm">
+    <div class="mt-8 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-8 xl:px-24 xl:max-w-2xl">
+      <h2 class="text-center text-3xl text-color-1 font-display font-semibold lg:text-left xl:text-3xl
+                    xl:text-bold">JOIN</h2>
+      <div class="mt-12">
         <form v-if="globalShare.isLogined == false" v-on:submit.prevent="checkAndJoin">
-          <FormRow title="로그인아이디">
-            <input ref="loginIdElRef" class="form-row-input" type="text" placeholder="아이디를 입력해주세요.">
-          </FormRow>
-          <FormRow title="로그인비밀번호">
-            <input ref="loginPwElRef" class="form-row-input" type="password" placeholder="로그인비밀번호를 입력해주세요.">
-          </FormRow>
-          <FormRow title="로그인비밀번호확인">
-            <input ref="loginPwConfirmElRef" class="form-row-input" type="password" placeholder="로그인비밀번호확인을 입력해주세요.">
-          </FormRow>
-          <FormRow title="프로필 이미지">
-            <input ref="profileImgElRef" class="form-row-input" type="file" placeholder="프로필이미지를 선택해주세요.">
-          </FormRow>
-          <FormRow title="이름">
-            <input ref="nameElRef" class="form-row-input" type="text" placeholder="이름을 입력해주세요.">
-          </FormRow>
-          <FormRow title="닉네임">
-            <input ref="nicknameElRef" class="form-row-input" type="text" placeholder="닉네임을 입력해주세요.">
-          </FormRow>
-          <FormRow title="전화번호">
-            <input ref="cellphoneNoElRef" class="form-row-input" type="tel" placeholder="전화번호를 입력해주세요.">
-          </FormRow>
-          <FormRow title="이메일">
-            <input ref="emailElRef" class="form-row-input" type="email" placeholder="이메일을 입력해주세요.">
-          </FormRow>
-          <FormRow title="가입">
-            <div class="btns">
-              <input type="submit" value="가입" class="btn-primary" />
-            </div>
-          </FormRow>
+          <div>
+            <div class="text-sm font-bold text-gray-700 tracking-wide">ID</div>
+            <input ref="loginIdElRef" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-blue-900" type="text" placeholder="Enter your ID">
+          </div>
+          <div class="mt-8">
+            <div class="text-sm font-bold text-gray-700 tracking-wide">password</div>
+            <input ref="loginPwElRef" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-blue-900" type="password" placeholder="Enter your password">
+          </div>
+          <div class="mt-8">
+            <div class="text-sm font-bold text-gray-700 tracking-wide">passwordConfirm</div>
+            <input ref="loginPwConfirmElRef" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-blue-900" type="password" placeholder="Enter your passwordConfirm">
+          </div>
+          <div class="mt-8">
+            <div class="text-sm font-bold text-gray-700 tracking-wide">name</div>
+            <input ref="nameElRef" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-blue-900" type="text" placeholder="Enter your name">
+          </div>
+          <div class="mt-8">
+            <div class="text-sm font-bold text-gray-700 tracking-wide">nickname</div>
+            <input ref="nicknameElRef" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-blue-900" type="text" placeholder="Enter your nickname">
+          </div>
+          <div class="mt-8">
+            <div class="text-sm font-bold text-gray-700 tracking-wide">Email Address</div>
+            <input ref="emailElRef" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-blue-900" type="email" placeholder="Enter your Email Address">
+          </div>
+          <div class="mt-8">
+            <div class="text-sm font-bold text-gray-700 tracking-wide">cellphoneNo</div>
+            <input ref="cellphoneNoElRef" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-blue-900" type="tel" placeholder="Enter your cellphoneNo">
+          </div>
+
+          <div class="mt-10">
+            <button type="submit" value="가입" class="login-btn bg-main text-gray-100 p-4 w-full rounded-full tracking-wide
+                                font-semibold font-display focus:outline-none focus:shadow-outline
+                                shadow-lg">
+              join
+            </button>
+          </div>
         </form>
         <div v-else>
           이미 로그인 되었습니다. <router-link class="btn-link" to="/">홈</router-link> 으로 이동
         </div>
+
+        <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
+          SNS로 계정으로 간편하게 가입하세요..
+          <div class="icon-block flex justify-center mt-8 text-4xl">
+            <div class="mr-8"><a href="#" class="hover:bg-opacity-80 bg-yellow-200 w-20 h-20 block rounded-full flex justify-center items-center"><i class="fas fa-comment"></i></a></div>
+            <div><a href="#" class="hover:bg-opacity-80 bg-green-600 text-white w-20 h-20 block rounded-full flex justify-center items-center"><span>N</span></a></div>
+          </div>
+
+        </div>
+
       </div>
     </div>
-  </section>
+  </div>
+  <div class="hidden lg:flex items-center justify-center bg-blue-100 flex-1 h-screen sticky top-0 left-0">
+    <div class="max-w-md transform duration-200 hover:scale-110 cursor-pointer">
+      <div class="">
+        <img class="" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FSo8Ix%2Fbtq1FA0n54L%2FeKnOyBlr436oPK3p8w9fs0%2Fimg.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>  
 </template>
 
 <script lang="ts">

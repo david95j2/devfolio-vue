@@ -32,3 +32,19 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.text-main {
+  color: #2e4c92;
+}
+
+.text-color-1{
+  color:#233e7d;
+}
+
+.bg-main {
+  background-color: #2e4c92;
+}
+
+.login-btn:hover{
+  background-color:#233e7d;
+}
