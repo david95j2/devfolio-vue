@@ -11,7 +11,7 @@
           <textarea class="form-row-input" placeholder="내용을 입력해주세요."></textarea>
         </FormRow>
         <FormRow title="작성">
-          <input type="button" value="작성" />
+          <input type="button" value="작성" class="btn-primary"/>
         </FormRow>
       </form>
     </div>
