@@ -73,7 +73,7 @@ export default defineComponent({
         .then(axiosResponse => {
           const newArticleId = axiosResponse.data.body.id;
           alert(newArticleId + "번 글이 생성되었습니다.");
-          router.push("/detail?id=" + newArticleId);
+          router.push("detail?id=" + newArticleId);
         });
     }
     return {
