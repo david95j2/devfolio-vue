@@ -15,8 +15,18 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/article/list" class="h-full flex items-center font-bold px-4 hover:bg-white hover:text-black">
-              ARTICLE LIST
+            <router-link to="/article/write" class="h-full flex items-center font-bold px-4 hover:bg-white hover:text-black">
+              글 작성
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/article/list?boardId=1" class="h-full flex items-center font-bold px-4 hover:bg-white hover:text-black">
+              공지사항 리스트
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/article/list?boardId=2" class="h-full flex items-center font-bold px-4 hover:bg-white hover:text-black">
+              자유 리스트
             </router-link>
           </li>
         </ul>
