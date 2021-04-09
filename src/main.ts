@@ -25,8 +25,15 @@ const mainApi = new MainApi();
 import './index.css'
 
 const routes = [
-  { path: '/', component: HomeMainPage },
-  { path: '/article/list', component: ArticleListPage },
+  {
+    path: '/',
+    component: HomeMainPage,
+  },
+  {
+    path: '/article/list',
+    component: ArticleListPage,
+    props: (route:any) => ({ boardId: route.query.boardId })
+  },
 ];
 
 // 라우터 생성
