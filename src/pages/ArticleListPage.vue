@@ -55,43 +55,64 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive} from 'vue'
+import { defineComponent, ref, reactive, getCurrentInstance, onMounted } from 'vue'
 import { Article } from '../dtos/'
+import { IArticle } from '../types/'
+import { MainApi } from '../apis/'
 
 export default defineComponent({
   name: 'ArticleListPage',
   setup() {
+    const mainApi:MainApi = getCurrentInstance()?.appContext.config.globalProperties.$mainApi;
+
+    function loadArticles() {
+      mainApi.article_list(1)
+      .then(axiosResponse => {
+        console.log(axiosResponse.data.body.articles);
+      });
+    }
+    onMounted(loadArticles);
+
     const newArticleTitleElRef = ref<HTMLInputElement>();
     const newArticleBodyElRef = ref<HTMLInputElement>();
+    
     const state = reactive({
       articles: [] as Article[]
     });
+
     function checkAndWriteArticle() {
       if ( newArticleTitleElRef.value == null ) {
         return;
       }
+
       const newArticleTitleEl = newArticleTitleElRef.value;
       newArticleTitleEl.value = newArticleTitleEl.value.trim();
+      
       if ( newArticleTitleEl.value.length == 0 ) {
         alert('제목을 입력해주세요.');
         newArticleTitleEl.focus();
         return;
       }
+      
       if ( newArticleBodyElRef.value == null ) {
         return;
       }
+      
       const newArticleBodyEl = newArticleBodyElRef.value;
       newArticleBodyEl.value = newArticleBodyEl.value.trim();
+      
       if ( newArticleBodyEl.value.length == 0 ) {
         alert('내용을 입력해주세요.');
         newArticleBodyEl.focus();
         return;
       }
+      
       writeArtile(newArticleTitleEl.value, newArticleBodyEl.value);
       newArticleTitleEl.value = '';
       newArticleBodyEl.value = '';
       newArticleTitleEl.focus();
     }
+    
     function writeArtile(title:string, body:string) {
       const newArticle = new Article(title, body);
       state.articles.push(newArticle);
