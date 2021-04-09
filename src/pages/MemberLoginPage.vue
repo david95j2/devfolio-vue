@@ -109,7 +109,7 @@ export default defineComponent({
           localStorage.setItem("authKey", authKey);
           localStorage.setItem("loginedMemberId", loginedMember.id + "");
           localStorage.setItem("loginedMemberName", loginedMember.name);
-          localStorage.setItem("loginedMemberNickname", loginedMember.Nickname);
+          localStorage.setItem("loginedMemberNickname", loginedMember.nickname);
           localStorage.setItem("loginedMemberProfileImgUrl", loginedMember.extra__thumbImg);
           
           props.globalShare.loginedMember = {
