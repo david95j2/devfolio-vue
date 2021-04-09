@@ -24,7 +24,7 @@
           </FormRow>
         </form>
         <div v-else>
-          <route-link class="btn-link" to="/member/login">로그인</route-link> 후 이용해주세요.
+          <router-link class="btn-link" to="/member/login">로그인</router-link> 후 이용해주세요.
         </div>        
       </div>
     </div>

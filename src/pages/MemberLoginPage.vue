@@ -18,7 +18,7 @@
           </FormRow>
         </form>
         <div v-else>
-          이미 로그인 되었습니다. <route-link class="btn-link" to="/">홈</route-link> 으로 이동
+          이미 로그인 되었습니다. <router-link class="btn-link" to="/">홈</router-link> 으로 이동
         </div>
       </div>
     </div>

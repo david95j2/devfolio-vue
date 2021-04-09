@@ -57,6 +57,7 @@ const routes = [
   {
     path: '/',
     component: HomeMainPage,
+    props: (route:any) => ({ globalShare })    
   },
   {
     path: '/article/list',
