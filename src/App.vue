@@ -6,8 +6,11 @@
       </router-link>
 
       <div class="flex-grow"></div>
+      <router-link v-if="globalShare.isLogined && !!globalShare.loginedMember.profileImgUrl" to="/member/mypage" class="header-bar__profile-img flex items-center">
+        <img :src="'http://localhost:8021' + globalShare.loginedMember.profileImgUrl" class="rounded-full" width="30" height="30" alt="">
+      </router-link>
 
-      <nav class="header-bar__menu-box-1 overflow-x-auto">
+      <nav class="header-bar__menu-box-1 overflow-x-auto ml-2">
         <ul class="flex h-full">
           <li>
             <router-link to="/" class="h-full flex items-center font-bold px-4 hover:bg-white hover:text-black whitespace-nowrap">

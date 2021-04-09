@@ -17,3 +17,15 @@ export function toIntOrUnd(data:any) {
 export function toIntOrNull(data:any) {
   return toInt(data, null);
 }
+
+export function toStringOrNull(data:any) {
+  if ( data == null ) {
+    return null;
+  }
+
+  if ( data == "null" ) {
+    return null;
+  }
+
+  return data;
+}

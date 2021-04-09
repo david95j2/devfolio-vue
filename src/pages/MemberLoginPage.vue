@@ -104,20 +104,20 @@ export default defineComponent({
           }
 
           const authKey = axiosResponse.data.body.authKey;
-          const loginedMemberId = axiosResponse.data.body.id;
-          const loginedMemberName = axiosResponse.data.body.name;
-          const loginedMemberNickname = axiosResponse.data.body.nickname;
+          const loginedMember = axiosResponse.data.body.member;
           
           localStorage.setItem("authKey", authKey);
-          localStorage.setItem("loginedMemberId", loginedMemberId + "");
-          localStorage.setItem("loginedMemberName", loginedMemberName);
-          localStorage.setItem("loginedMemberNickname", loginedMemberNickname);
+          localStorage.setItem("loginedMemberId", loginedMember.id + "");
+          localStorage.setItem("loginedMemberName", loginedMember.name);
+          localStorage.setItem("loginedMemberNickname", loginedMember.Nickname);
+          localStorage.setItem("loginedMemberProfileImgUrl", loginedMember.extra__thumbImg);
           
           props.globalShare.loginedMember = {
             authKey,
-            id:loginedMemberId,
-            name:loginedMemberName,
-            nicknam:loginedMemberNickname,
+            id:loginedMember.id,
+            name:loginedMember.name,
+            nicknam:loginedMember.nickname,
+            profileImgUrl:loginedMember.extra__thumbImg
           };
           
           router.replace('/')
