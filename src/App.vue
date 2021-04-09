@@ -1,6 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam fugit harum dignissimos enim modi odio, cumque iusto repellat, provident pariatur nihil optio aliquam, necessitatibus debitis sint cum nobis minus cupiditate.
 </template>
 
 <script lang="ts">
@@ -16,12 +15,13 @@ export default defineComponent({
 </script>
 
 <style>
+html,body {
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
