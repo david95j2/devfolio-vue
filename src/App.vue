@@ -1,5 +1,7 @@
 <template>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam fugit harum dignissimos enim modi odio, cumque iusto repellat, provident pariatur nihil optio aliquam, necessitatibus debitis sint cum nobis minus cupiditate.
+  <div class="container mx-auto bg-red-500">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum dignissimos numquam ipsum, possimus aliquid quod quas soluta corrupti similique, consequuntur atque est ratione earum sequi odit minima eligendi maxime unde!
+  </div>
 </template>
 
 <script lang="ts">
