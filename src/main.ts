@@ -9,6 +9,7 @@ import './index.css'
 
 // 전역 컴포넌트 불러오기
 import TitleBar from './components/TitleBar.vue';
+import FormRow from './components/FormRow.vue';
 
 // 페이지 불러오기
 import HomeMainPage from './pages/HomeMainPage.vue'
@@ -31,7 +32,9 @@ const router = createRouter({
 // 앱 생성
 const app = createApp(App)
 
+// 전역 컴포넌트 등록
 app.component('TitleBar', TitleBar);
+app.component('FormRow', FormRow);
 
 // 앱에 라우터 적용
 app.use(router)
